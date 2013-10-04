@@ -28,9 +28,16 @@
 	    			<ul data-bind="foreach: states" id="navigation">
 	    				<li><a href="#" data-bind="text:name, click:$parent.stateClicked"></a></li>
 	    			</ul>
-	            </div>
-    			<div class="stateInfo"data-bind="visible: selectedState">
-					<dl data-bind="with: selectedState">
+	            </div>    
+          <div class="stateInfo"data-bind="visible: selectedState">
+           	<div id="porTipoDeVeiculo">
+                <div class="iconVeiculo"> <img src="img/motorcycle.png" width="80px" height="80px"/>  </div>
+                <div class="iconVeiculo">  <img src="img/car.png" width="80px" height="80px"/>  </div>
+                <div class="iconVeiculo">  <img src="img/bus.png" width="88px" height="50px" style="padding-top: 30px;"/>  </div>
+                <div class="iconVeiculo">  <img src="img/truck.png" width="88px" height="50px" style="padding-top: 30px;">  </div>
+               </div>
+			<div id="pie">
+            <dl data-bind="with: selectedState">
 						<dt>Rank</dt>
 						<dd data-bind="text:by100Thousand.rank" ></dd>
 
@@ -39,11 +46,14 @@
 
 						<dt>Gravidade</dt>
 						<dd><div id="severity"></div></dd>	
-
-						<dt>Ao longo do dia</dt>
-						<dd><div id="hour"></div></dd>				
-
-					</dl>		
+          </dl>
+        </div>
+         <div id="histograma">
+          <dl data-bind="with: selectedState">
+            <dt>Ao longo do dia</dt>
+            <dd><div id="hour"></div></dd>
+          </dl>
+        </div>
 				</div>        
 
 			</div>
